@@ -1,6 +1,6 @@
 !define PRODUCT_NAME "Katinor Mod Server Patch Script (16.12.24)"
 !define PRODUCT_VERSION "1"
-!define PRODUCT_PUBLISHER "Team Croatia"
+!define PRODUCT_PUBLISHER "hoparkgo9ma"
 !define PRODUCT_WEB_SITE "https://github.com/kpjhg0124"
 
 SetCompressor lzma
@@ -12,13 +12,13 @@ SetCompressor lzma
 ; MUI Settings
 !define MUI_ABORTWARNING
 !define MUI_ICON "icon.ico"
-BrandingText "Team Croatia"
+BrandingText "hoparkgo9ma"
 
 !define MUI_WELCOMEFINISHPAGE_BITMAP "WelcomePageBitMapSub.bmp"
 ; Welcome page
 !insertmacro MUI_PAGE_WELCOME
 !define MUI_PAGE_HEADER_TEXT "Katinor Mod Server Patch Script (16.12.24)"
-!define MUI_PAGE_HEADER_SUBTEXT "hoparkgo9ma"
+!define MUI_PAGE_HEADER_SUBTEXT "By hoparkgo9ma"
 ; License page
 !insertmacro MUI_PAGE_LICENSE "License.txt"
 ; Directory page
@@ -94,11 +94,57 @@ CheckB2:
   goto Step3
 Step3:
   SetOutPath "$INSTDIR\Temp"
-  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile27.uf@26736645585DC92231F139.001" "GameLib.7z.001"
-  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile25.uf@210AD345585DC98F29C17B.027" "GameLib.7z.027"
-  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile25.uf@25014C45585DC9912E2B71.028" "GameLib.7z.028"
-  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile23.uf@23729E45585DC99734B507.029" "GameLib.7z.029"
-  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile8.uf@266CDB45585DC99B377D8D.030" "GameLib.7z.030"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile25.uf@2320B235585E0F370F0E99.001" "assets.7z.001"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile25.uf@257B5B35585E0F3C2C1B97.002" "assets.7z.002"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile30.uf@22307F35585E0F4003B124.003" "assets.7z.003"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile26.uf@2208D735585E0F4520C689.004" "assets.7z.004"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile8.uf@22189635585E0F4A17F6C5.005" "assets.7z.005"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile5.uf@22284935585E0F510A7F8F.006" "assets.7z.006"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile10.uf@212EBA35585E0F5505B02E.007" "assets.7z.007"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile5.uf@24789735585E0F592F46E0.008" "assets.7z.008"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile30.uf@22320235585E0F5B02227F.009" "assets.7z.009"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@241E3035585E0F5F127528.010" "assets.7z.010"
+  
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile27.uf@2678CA35585E0F6329708B.001" "libraries.7z.001"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile2.uf@2203B135585E0F6A269374.002" "libraries.7z.002"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile29.uf@221F4B35585E0F6E11742F.003" "libraries.7z.003"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile25.uf@2604D835585E0F7425EBF4.004" "libraries.7z.004"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile10.uf@2673C535585E0F7A33030B.005" "libraries.7z.005"
+
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile6.uf@22701335585E0F7C3630BC.001" "mods.7z.001"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile9.uf@25304835585E0F8104A749.002" "mods.7z.002"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile6.uf@227E8E35585E0F85298A90.003" "mods.7z.003"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile9.uf@272F5035585E0F89056903.004" "mods.7z.004"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile28.uf@27042F35585E0F8E269487.005" "mods.7z.005"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile1.uf@2272B035585E0F92352C03.006" "mods.7z.006"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile1.uf@26222E35585E0F960F9627.007" "mods.7z.007"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile27.uf@242EA335585E0F9B060C86.008" "mods.7z.008"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@252D9F35585E0FA0076A7B.009" "mods.7z.009"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile4.uf@2173AC35585E0FA4335583.010" "mods.7z.010"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile6.uf@227BFD35585E0FAB2C04A3.011" "mods.7z.011"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile9.uf@2122B435585E0FB00FFE92.012" "mods.7z.012"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile21.uf@21781335585E0FB431EF50.013" "mods.7z.013"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile23.uf@24291D35585E0FB80B8DC1.014" "mods.7z.014"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@2431C135585E0FBA03EE73.015" "mods.7z.015"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile25.uf@2278CA35585E0FBE2A4074.016" "mods.7z.016"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile3.uf@217C0B35585E0FC22DDF9F.017" "mods.7z.017"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile4.uf@2479CC35585E0FC72F49C4.018" "mods.7z.018"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile26.uf@2204A335585E0FCB24AE61.019" "mods.7z.019"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile29.uf@2204D835585E0FD026A914.020" "mods.7z.020"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile10.uf@27304835585E0FD4057671.021" "mods.7z.021"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile29.uf@2425F335585E0FDB0D0729.022" "mods.7z.022"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@252F5035585E0FDF06B424.023" "mods.7z.023"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile10.uf@21189635585E0FE4199A3F.024" "mods.7z.024"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@242D9F35585E0FE808963F.025" "mods.7z.025"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile21.uf@250F3A35585E0FEC1F6175.026" "mods.7z.026"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile10.uf@27721935585E0FF0373D16.027" "mods.7z.027"
+
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile4.uf@25320235585E0FF204E9A6.7z" "shaderpacks.7z"
+
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@23291D35585E0FF20CCD63.7z" "versions.7z"
+
+
+
   SetOutPath "$INSTDIR"
   DetailPrint "모드 적용중..."
   File "7za.exe"
