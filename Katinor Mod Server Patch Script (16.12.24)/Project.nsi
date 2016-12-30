@@ -20,7 +20,7 @@ BrandingText "hoparkgo9ma"
 !define MUI_PAGE_HEADER_TEXT "Katinor Mod Server Patch Script (16.12.24)"
 !define MUI_PAGE_HEADER_SUBTEXT "By hoparkgo9ma"
 ; License page
-!insertmacro MUI_PAGE_LICENSE "License.txt"
+!insertmacro MUI_PAGE_LICENSE "README.txt"
 ; Directory page
 !insertmacro MUI_PAGE_DIRECTORY
 ; Install Setting page
@@ -144,7 +144,6 @@ Step3:
   Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@23291D35585E0FF20CCD63.7z" "versions.7z"
 
 
-
   SetOutPath "$INSTDIR"
   DetailPrint "모드 적용중..."
   File "7za.exe"
@@ -152,8 +151,8 @@ Step3:
   nsExec::Exec "Extract.cmd"
   DetailPrint "임시파일을 삭제하는중...."
   RMDir /r "$INSTDIR\Temp"
-  Delete "7za.exe"
-  Delete "Extract.exe"
+  ;Delete "7za.exe"
+  ;Delete "Extract.exe"
   DetailPrint "완료"
   SetOutPath "$INSTDIR"
 SectionEnd
