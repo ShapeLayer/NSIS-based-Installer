@@ -1,4 +1,4 @@
-!define PRODUCT_NAME "Katinor Mod Server Patch Script (16.12.24)"
+!define PRODUCT_NAME "Katinor Mod Server Patch Script (16.12.31)"
 !define PRODUCT_VERSION "3"
 !define PRODUCT_PUBLISHER "hoparkgo9ma"
 !define PRODUCT_WEB_SITE "https://github.com/kpjhg0124"
@@ -25,7 +25,7 @@ BrandingText "hoparkgo9ma"
 !define MUI_WELCOMEFINISHPAGE_BITMAP "WelcomePageBitMapSub.bmp"
 ; Welcome page
 !insertmacro MUI_PAGE_WELCOME
-!define MUI_PAGE_HEADER_TEXT "Katinor Mod Server Patch Script (16.12.24)"
+!define MUI_PAGE_HEADER_TEXT "Katinor Mod Server Patch Script (16.12.31)"
 !define MUI_PAGE_HEADER_SUBTEXT "By hoparkgo9ma"
 ; License page
 !insertmacro MUI_PAGE_LICENSE "README.txt"
@@ -66,8 +66,8 @@ Function Form
 FunctionEnd
 
 
-Name "Katinor Mod Server Patch Script (16.12.24)"
-OutFile "Katinor Mod Server Patch Script (16.12.24).exe"
+Name "Katinor Mod Server Patch Script (16.12.31)"
+OutFile "Katinor Mod Server Patch Script (16.12.31).exe"
 InstallDir "$APPDATA\.minecraft"
 ShowInstDetails show
 
