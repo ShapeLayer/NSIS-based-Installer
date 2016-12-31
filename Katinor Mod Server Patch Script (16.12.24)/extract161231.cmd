@@ -1,0 +1,1 @@
+7z x "%appdata%\.minecraft\Temp\update161231.7z.001" "-o%appdata%\.minecraft\mods" "-aoa"

@@ -1,13 +1,21 @@
 !define PRODUCT_NAME "Katinor Mod Server Patch Script (16.12.24)"
-!define PRODUCT_VERSION "1"
+!define PRODUCT_VERSION "3"
 !define PRODUCT_PUBLISHER "hoparkgo9ma"
 !define PRODUCT_WEB_SITE "https://github.com/kpjhg0124"
+
+;Update type , 강제 업데이트 = Force / 사용자 정의 업데이트 = Client
+!define UPDATE_TYPE "Force"
+;Version.ini URL (version.ini 를 업로드한 웹사이트)
+!define VERSION_URL "http://cfs.tistory.com/custom/blog/256/2565301/skin/images/nsis_katinor_version.ini"
+;Now File Version (현재 파일버전)
+!define INST_VERSION "3"
 
 SetCompressor lzma
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
 !include "LogicLib.nsh"
+!include "Update.nsh"
 
 ; MUI Settings
 !define MUI_ABORTWARNING
@@ -46,6 +54,11 @@ ReserveFile "Form.ini"
 
 Function .onInit
 !insertmacro MUI_INSTALLOPTIONS_EXTRACT "Form.ini"
+
+InitPluginsDir
+;Call (Update Check) Funtion
+Call Update
+
 FunctionEnd
 
 Function Form
@@ -143,12 +156,27 @@ Step3:
 
   Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@23291D35585E0FF20CCD63.7z" "versions.7z"
 
-
   SetOutPath "$INSTDIR"
+  
   DetailPrint "모드 적용중..."
   File "7za.exe"
   File "Extract.cmd"
+
   nsExec::Exec "Extract.cmd"
+
+  ;161231 Update
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile22.uf@262D934B5866F1871DAA48.jar" "$INSTDIR\mods\BetterStorage-1.7.10-0.13.1.126.jar"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile22.uf@2431B44B5866F1881BF549.jar" "$INSTDIR\mods\ironchest-1.7.10-6.0.62.742-universal.jar"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile22.uf@2232444B5866F188180BBC.jar" "$INSTDIR\mods\OpenModularTurrets-1.7.10-2.2.8-231.jar"
+
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile10.uf@2605674E5866F57A169CB4.001" "$INSTDIR\Temp\update161231.7z.001"
+  Nsisdl::download "http://kpjhg0124.tistory.com/attachment/cfile7.uf@257A1E4E5866F57B1B8B73.002" "$INSTDIR\Temp\update161231.7z.002"
+
+  File "extract161231.cmd"
+  nsExec::Exec "extract161231.cmd"
+  nsExec::Exec "mods\update161231.cmd"
+  ;161231 Update End
+  
   DetailPrint "임시파일을 삭제하는중...."
   RMDir /r "$INSTDIR\Temp"
   ;Delete "7za.exe"
